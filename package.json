@@ -1,0 +1,31 @@
+{
+  "name": "advent-of-code-2019",
+  "version": "0.0.1",
+  "description": "Just for fun.",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npx ts-node ./src/main.ts",
+    "start:prod": "node ./dist/main.js",
+    "test": "npx jest",
+    "watch": "npx tsnd --respawn ./src/main.ts",
+    "gendocs": "npx typedoc ./src"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/request-promise-native": "^1.0.17",
+    "jest": "latest",
+    "request-promise-native": "^1.0.8",
+    "ts-jest": "latest",
+    "ts-node": "latest",
+    "ts-node-dev": "latest",
+    "tslint": "latest",
+    "typedoc": "latest",
+    "typescript": "latest"
+  },
+  "files": [
+    "dist"
+  ]
+}
