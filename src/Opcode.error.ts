@@ -1,1 +1,1 @@
-export class OpcodeError extends Error {};
+export class OpcodeError extends Error {}

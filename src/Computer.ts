@@ -1,19 +1,25 @@
 import { OpcodeError } from "./Opcode.error";
 
-export class Computer {
-    private memory: (number | undefined) [] = [];
+interface InstructionParameters {
+    targetAddress: number;
+    value1: number;
+    value2: number;
+}
 
-    constructor (opcode?: number[]) {
+export class Computer {
+    private memory: (number | undefined)[] = [];
+
+    constructor(opcode?: number[]) {
         if (opcode) {
             this.load(opcode);
         }
     }
 
-    public load (opcode: number[]) {
-        this.memory = opcode;   
+    public load(opcode: number[]): void {
+        this.memory = opcode;
     }
 
-    public run () {
+    public run(): void {
         for (let address = 0; address < this.memory.length; address += 4) {
             const code = this.memory[address];
             if (code === 1) {
@@ -28,27 +34,27 @@ export class Computer {
         }
     }
 
-    public get (index: number) {
+    public get(index: number): number | undefined {
         return this.memory[index];
     }
 
-    public set(address: number, value: number) {
+    public set(address: number, value: number): void {
         this.memory[address] = value;
     }
 
-    private addFrom (index: number) {
+    private addFrom(index: number): void {
         const { targetAddress, value1, value2 } = this.getInstructionParameters(index);
         this.memory[targetAddress] = value1 + value2;
     }
 
-    private multiplyFrom (index: number) {
+    private multiplyFrom(index: number): void {
         const { targetAddress, value1, value2 } = this.getInstructionParameters(index);
         this.memory[targetAddress] = value1 * value2;
     }
 
-    private getInstructionParameters(index: number) {
+    private getInstructionParameters(index: number): InstructionParameters {
         const targetAddress = this.memory[index + 3];
-        const value1Address= this.memory[index + 1];
+        const value1Address = this.memory[index + 1];
         const value2Address = this.memory[index + 2];
 
         if (targetAddress === undefined || value1Address === undefined || value2Address === undefined) {
