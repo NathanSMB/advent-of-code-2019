@@ -12,7 +12,7 @@
     "gendocs": "npx typedoc ./src"
   },
   "husky": {
-    "pre-commit": "echo test"
+    "pre-commit": "yarn lint"
   },
   "dependencies": {},
   "devDependencies": {

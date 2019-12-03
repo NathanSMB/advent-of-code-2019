@@ -2,7 +2,7 @@ export class Module {
     constructor(public mass: number) {}
 
     get fuelRequirement(): number {
-        return this.calculateFuel(this.mass);
+        return this.calculateFuel(this.mass)
     }
 
     private calculateFuel(mass: number): number {
