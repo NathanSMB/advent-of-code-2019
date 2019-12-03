@@ -8,6 +8,7 @@
     "start": "npx ts-node ./src/main.ts",
     "start:prod": "node ./dist/main.js",
     "test": "npx jest",
+    "test:coverage": "npx jest --coverage",
     "watch": "npx tsnd --respawn ./src/main.ts",
     "gendocs": "npx typedoc ./src"
   },
