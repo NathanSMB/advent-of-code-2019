@@ -11,9 +11,6 @@
     "lint:ci": "npx eslint --max-warnings=0 \"*/**/*.ts\"",
     "gendocs": "npx typedoc ./src"
   },
-  "husky": {
-    "pre-commit": "yarn lint"
-  },
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "latest",
@@ -23,7 +20,6 @@
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "husky": "^3.1.0",
     "jest": "latest",
     "prettier": "^1.19.1",
     "ts-jest": "latest",
