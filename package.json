@@ -15,9 +15,7 @@
   "devDependencies": {
     "@types/jest": "latest",
     "@types/node": "latest",
-    "@types/request-promise-native": "^1.0.17",
     "jest": "latest",
-    "request-promise-native": "^1.0.8",
     "ts-jest": "latest",
     "ts-node": "latest",
     "ts-node-dev": "latest",
