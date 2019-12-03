@@ -7,8 +7,8 @@
     "build": "npx tsc",
     "test": "npx jest",
     "test:coverage": "npx jest --coverage",
-    "lint": "npx eslint --fix \"*/**/*.ts\"",
-    "lint:ci": "npx eslint --max-warnings=0 \"*/**/*.ts\"",
+    "format": "npx eslint --fix \"*/**/*.ts\"",
+    "lint": "npx eslint --max-warnings=0 \"*/**/*.ts\"",
     "gendocs": "npx typedoc ./src"
   },
   "dependencies": {},
