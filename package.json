@@ -8,7 +8,7 @@
     "test": "npx jest",
     "test:coverage": "npx jest --coverage",
     "format": "npx eslint --fix \"*/**/*.ts\"",
-    "lint": "npx eslint --max-warnings=0 \"*/**/*.ts\"",
+    "lint": "npx eslint --fix --max-warnings=0 \"*/**/*.ts\"",
     "gendocs": "npx typedoc ./src"
   },
   "dependencies": {},

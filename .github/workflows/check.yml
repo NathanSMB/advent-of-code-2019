@@ -1,9 +1,9 @@
-name: Build and Check
+name: Run Tests
 
 on: [push]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -11,6 +11,4 @@ jobs:
       with:
         node-version: '12.x'
     - run: yarn install
-    - run: yarn build
     - run: yarn test:coverage
-    - run: yarn lint

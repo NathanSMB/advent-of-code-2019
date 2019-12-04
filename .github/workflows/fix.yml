@@ -3,7 +3,7 @@ name: CI
 on: [pull_request]
 
 jobs:
-  build:
+  build-test-and-format:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -13,6 +13,12 @@ jobs:
     - run: yarn install
     - run: yarn build
     - run: yarn test:coverage
-    - uses: MarvinJWendt/run-node-formatter@stable
+    - run: yarn format
+    - run: yarn lint
+    - uses: stefanzweifel/git-auto-commit-action@v2.4.0
+      with:
+        commit_message: Automatic Formatting
+        branch: ${{ github.head_ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
